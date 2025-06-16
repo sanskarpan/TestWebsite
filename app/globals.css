@@ -1,0 +1,350 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Hero Styles */
+.hero-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  color: #f1f5f9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  color: #cbd5e1;
+  font-weight: 300;
+  animation: fadeInUp 1.5s ease-out 0.5s both;
+}
+
+.hero-content {
+  backdrop-filter: blur(10px);
+  background: rgba(15, 23, 42, 0.3);
+  padding: 3rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Section Styles */
+.section-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #f8fafc;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.section-header {
+  position: relative;
+}
+
+.decorative-line {
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #f472b6, transparent);
+  margin: 1rem auto;
+}
+
+.content-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.floating-icon {
+  position: absolute;
+  top: -20px;
+  right: 30px;
+  font-size: 2.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.body-text {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.body-text-emphasis {
+  font-size: 1.125rem;
+  color: #f472b6;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+/* Carousel Styles */
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Closing Styles */
+.closing-card {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quote-icon {
+  font-size: 4rem;
+  color: #f472b6;
+  opacity: 0.7;
+}
+
+.quote-text {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+.closing-text {
+  font-size: 1.125rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+}
+
+.signature {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 2rem;
+  color: #f472b6;
+  font-weight: 600;
+}
+
+.final-plea {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shooting-star {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.plea-text {
+  font-size: 1.125rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, transparent, #f472b6, transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+/* Background Animations */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(2px 2px at 20px 30px, #f472b6, transparent),
+    radial-gradient(2px 2px at 40px 70px, #a855f7, transparent),
+    radial-gradient(1px 1px at 90px 40px, #f472b6, transparent),
+    radial-gradient(1px 1px at 130px 80px, #a855f7, transparent),
+    radial-gradient(2px 2px at 160px 30px, #f472b6, transparent);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: sparkle 20s linear infinite;
+}
+
+.floating-hearts {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.floating-hearts::before,
+.floating-hearts::after {
+  content: "💖";
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.3;
+  animation: floatUp 15s linear infinite;
+}
+
+.floating-hearts::before {
+  left: 20%;
+  animation-delay: 0s;
+}
+
+.floating-hearts::after {
+  left: 80%;
+  animation-delay: 7s;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideShow {
+  0%,
+  14.28% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes sparkle {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200px);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 2rem;
+  }
+
+  .content-card {
+    padding: 2rem;
+  }
+
+  .closing-card {
+    padding: 2rem;
+  }
+
+  .body-text,
+  .body-text-emphasis {
+    font-size: 1rem;
+  }
+}
+
+.carousel-nav {
+  background: rgba(30, 41, 59, 0.7);
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: background 0.2s;
+}
+.carousel-nav:hover {
+  background: rgba(244, 114, 182, 0.9);
+  color: #fff;
+}

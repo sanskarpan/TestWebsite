@@ -32,7 +32,11 @@ export default function ApologyPage() {
         <div className="carousel-container absolute inset-0 z-0">
           <div className="carousel">
             <div className="carousel-slide active" style={{ opacity: 1, position: 'relative' }}>
-              <img src={images[current]} alt={`Memory ${current + 1}`} className="carousel-image" />
+              <img
+                src={images[current]}
+                alt={`Memory ${current + 1}`}
+                className="carousel-image w-full h-full object-contain"
+              />
               <button
                 className="carousel-nav carousel-nav-prev"
                 onClick={goToPrev}
